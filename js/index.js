@@ -10,7 +10,3 @@ const initSwiper = () => {
 }
 
 initSwiper();
-
-const moveReadMoreArrow = () => {
-  const arrow = document.querySelector('.benefit__readmore');
-}

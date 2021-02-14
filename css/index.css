@@ -41,6 +41,13 @@ img {
   background-position: center;
 }
 
+@media screen and (max-width: 520px) {
+  .header__upper {
+    padding: 20px;
+    height: 350px;
+  }
+}
+
 .header__frame {
   border: 1px solid #ecb84c;
   border-bottom: none;
@@ -54,6 +61,12 @@ img {
   height: 100%;
 }
 
+@media screen and (max-width: 520px) {
+  .header__frame {
+    height: 300px;
+  }
+}
+
 .header__main-heading {
   font-family: Georgia;
   font-weight: 700;
@@ -62,6 +75,18 @@ img {
   color: #fff;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
   margin: auto;
+}
+
+@media screen and (max-width: 650px) {
+  .header__main-heading {
+    font-size: 150px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .header__main-heading {
+    font-size: 100px;
+  }
 }
 
 .header__slogan {
@@ -79,6 +104,18 @@ img {
           align-items: center;
   white-space: nowrap;
   text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (max-width: 650px) {
+  .header__slogan {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .header__slogan {
+    font-size: 14px;
+  }
 }
 
 .header__slogan::before, .header__slogan::after {
@@ -107,6 +144,12 @@ img {
   padding: 24px 20px 18px;
 }
 
+@media screen and (max-width: 716px) {
+  .header__lower {
+    padding-bottom: 0;
+  }
+}
+
 .header__menu {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -119,7 +162,12 @@ img {
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  position: relative;
+}
+
+@media screen and (max-width: 716px) {
+  .header__menu-item {
+    margin-bottom: 20px;
+  }
 }
 
 .header__menu-link {
@@ -130,6 +178,12 @@ img {
   color: #909090;
   padding: 24px 20px 16px;
   border-bottom: 4px solid transparent;
+}
+
+@media screen and (max-width: 716px) {
+  .header__menu-link {
+    border-bottom: none !important;
+  }
 }
 
 .header__menu-link:hover {
@@ -411,6 +465,12 @@ img {
 .artefact__car-point-3 {
   top: 140px;
   right: 310px;
+}
+
+@media screen and (max-width: 1190px) {
+  .artefact__car-point-3 {
+    display: none;
+  }
 }
 
 .artefact__car-point-core {

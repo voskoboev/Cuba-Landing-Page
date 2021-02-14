@@ -12,7 +12,7 @@ $secondary-weight: 700;
     family: $family;
     weight: $weight;
     size: $size;
-  } 
+  }
 }
 
 html {
@@ -52,6 +52,13 @@ img {
     background-position: center; // для адаптива
   }
 
+  @media screen and (max-width: 520px) {
+    &__upper {
+      padding: 20px;
+      height: 350px;
+    }
+  }
+
   &__frame {
     border: 1px solid $primary-color;
     border-bottom: none;
@@ -60,12 +67,30 @@ img {
     height: 100%;
   }
 
+  @media screen and (max-width: 520px) {
+    &__frame {
+      height: 300px;
+    }
+  }
+
   &__main-heading {
     @include font($secondary-font, $secondary-weight, 200px);
     line-height: 227px;
     color: #fff;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
     margin: auto;
+  }
+
+  @media screen and (max-width: 650px) {
+    &__main-heading {
+      font-size: 150px;
+    }
+  }
+
+  @media screen and (max-width: 520px) {
+    &__main-heading {
+      font-size: 100px;
+    }
   }
 
   &__slogan {
@@ -77,6 +102,18 @@ img {
     align-items: center;
     white-space: nowrap;
     text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.5);
+  }
+
+  @media screen and (max-width: 650px) {
+    &__slogan {
+      font-size: 20px;
+    }
+  }
+
+  @media screen and (max-width: 520px) {
+    &__slogan {
+      font-size: 14px;
+    }
   }
 
   &__slogan::before,
@@ -102,12 +139,24 @@ img {
     padding: 24px 20px 18px;
   }
 
+  @media screen and (max-width: 716px) {
+    &__lower{
+      padding-bottom: 0;
+    }
+  }
+
   &__menu {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    position: relative;
+    // position: relative;
+  }
+
+  @media screen and (max-width: 716px) {
+    &__menu-item {
+      margin-bottom: 20px;
+    }
   }
 
   &__menu-link {
@@ -118,12 +167,17 @@ img {
     border-bottom: 4px solid transparent;
   }
 
+  @media screen and (max-width: 716px) {
+    &__menu-link {
+      border-bottom: none !important;
+    }
+  }
+
   &__menu-link:hover {
     color: #4e5665;
     border-bottom: 4px solid $primary-color;
   }
 }
-
 
 .benefit {
   padding-top: 85px;
@@ -340,7 +394,7 @@ img {
     background-size: cover; // contain для адаптива мб
     max-width: 1170px;
     height: 330px;
-    position: relative; 
+    position: relative;
     box-shadow: 0px 20px 13px -20px rgba(0, 0, 0, 0.5);
   }
 
@@ -369,6 +423,12 @@ img {
   &__car-point-3 {
     top: 140px;
     right: 310px;
+  }
+
+  @media screen and (max-width: 1190px) {
+    &__car-point-3 {
+      display: none;
+    }
   }
 
   &__car-point-core {
@@ -481,6 +541,7 @@ img {
     margin: 0 auto;
     margin-bottom: 56px;
   }
+
   &__carousel {
     width: 640px;
     height: 480px;
@@ -493,7 +554,7 @@ img {
     width: 640px;
     margin: 0 auto;
   }
-  
+
   .swiper-btn {
     position: absolute;
     width: 40px;
@@ -504,17 +565,17 @@ img {
     background-size: 16px 16px;
     border-radius: 50%;
   }
-  
+
   .swiper-btn::after {
     display: none;
   }
-  
+
   .swiper-button-prev {
     top: 240px;
     left: -20px;
     background-image: url(../images/left-arrow-comp.png);
   }
-  
+
   .swiper-button-next {
     top: 240px;
     right: -20px;
@@ -551,28 +612,28 @@ img {
   }
 
   &__list-item--message::before {
-    content: url('../images/message-comp.png'); 
-    vertical-align: middle;   
+    content: url('../images/message-comp.png');
+    vertical-align: middle;
   }
 
   &__list-item--fb::before {
     content: url('../images/fb-comp.png');
-    vertical-align: middle; 
+    vertical-align: middle;
   }
 
   &__list-item--inst::before {
     content: url('../images/inst-comp.png');
-    vertical-align: middle; 
+    vertical-align: middle;
   }
 
   &__list-item--youtube::before {
     content: url('../images/youtube-comp.png');
-    vertical-align: middle; 
+    vertical-align: middle;
   }
 
   &__list-item--email::before {
     content: url('../images/email-comp.png');
-    vertical-align: middle; 
+    vertical-align: middle;
   }
 
   &__list-link {
