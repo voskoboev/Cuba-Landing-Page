@@ -1,0 +1,596 @@
+$primary-color: #ecb84c;
+$secondary-color: #d0d4d8;
+
+$primary-font: Lato;
+$secondary-font: Georgia;
+
+$primary-weight: 400;
+$secondary-weight: 700;
+
+@mixin font($family, $weight, $size: 16px) {
+  font: {
+    family: $family;
+    weight: $weight;
+    size: $size;
+  } 
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  @include font($primary-font, $primary-weight);
+  font-style: normal;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  object-fit: contain; // заменить на класс
+}
+
+.container {
+  max-width: 970px;
+  margin: 0 auto;
+}
+
+.header {
+  &__upper {
+    background-image: url(../images/header-cuba-comp.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 40px;
+    width: 100%;
+    height: 100vh;
+    background-position: center; // для адаптива
+  }
+
+  &__frame {
+    border: 1px solid $primary-color;
+    border-bottom: none;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &__main-heading {
+    @include font($secondary-font, $secondary-weight, 200px);
+    line-height: 227px;
+    color: #fff;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    margin: auto;
+  }
+
+  &__slogan {
+    @include font($secondary-font, $primary-weight, 24px);
+    line-height: 27px;
+    color: #fff;
+    margin-bottom: -13.5px;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.5);
+  }
+
+  &__slogan::before,
+  &__slogan::after {
+    content: '';
+    border-top: 1px solid $primary-color;
+    width: 100%;
+  }
+
+  &__slogan::before {
+    margin-right: 30px;
+  }
+
+  &__slogan::after {
+    margin-left: 30px;
+  }
+
+  &__lower {
+    text-align: center;
+    border-bottom: 1px solid $secondary-color;
+    display: flex;
+    justify-content: center;
+    padding: 24px 20px 18px;
+  }
+
+  &__menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  &__menu-link {
+    @include font($primary-font, $secondary-weight, 14px);
+    line-height: 19px;
+    color: #909090;
+    padding: 24px 20px 16px; // посмотреть реальные расстояния
+    border-bottom: 4px solid transparent;
+  }
+
+  &__menu-link:hover {
+    color: #4e5665;
+    border-bottom: 4px solid $primary-color;
+  }
+}
+
+
+.benefit {
+  padding-top: 85px;
+
+  &__container {
+    max-width: 1170px;
+    padding-right: 100px;
+    padding-left: 100px;
+    border-bottom: 1px solid $secondary-color; // задать прозрачность
+  }
+
+  &__heading {
+    @include font(inherit, $primary-weight, 32px);
+    line-height: 38px;
+    color: #4e5665;
+    text-align: center;
+  }
+
+  &__text {
+    margin-top: 22px;
+    @include font($primary-font, $primary-weight);
+    line-height: 28px;
+    color: #505050;
+  }
+
+  &__readmore {
+    text-align: end;
+    display: block;
+    @include font($primary-font, $secondary-weight); // ?
+    line-height: 28px;
+    color: $primary-color;
+  }
+
+  &__readmore::after {
+    content: '››';
+  }
+
+  &_feature-container {
+    margin: 0 auto;
+    margin-top: 36px;
+    max-width: 810px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 80px;
+  }
+
+  &__pic {
+    width: 80px;
+    height: 80px;
+  }
+
+  &__counter {
+    display: block;
+    @include font($primary-font, $secondary-weight, 22px);
+    line-height: 30px;
+    color: #4e5665;
+    text-align: center;
+    margin-top: 32px;
+  }
+
+  &__feature-heading {
+    display: block;
+    @include font($primary-font, $secondary-weight, 14px);
+    line-height: 17px;
+    color: #909090;
+    text-align: center;
+  }
+}
+
+.about {
+  padding-top: 80px;
+
+  // &__container {
+
+  // }
+
+  &__heading {
+    @include font(inherit, $primary-weight, 32px);
+    line-height: 38px;
+    color: #4e5665;
+    text-align: center;
+  }
+
+  &__text {
+    @include font($primary-font, $primary-weight);
+    line-height: 28px;
+    color: #505050;
+    margin-top: 13px;
+  }
+
+  &__info {
+    width: 470px;
+    // height: 290px;
+    padding: 35px 40px 35px;
+    z-index: 1;
+    background-color: #fff;
+    position: relative;
+  }
+
+  &__info-text {
+    margin-top: 20px;
+  }
+
+  &__upper-info::before {
+    content: '';
+    background-image: url('../images/left-upper-angle-comp.png');
+    position: absolute;
+    top: 19px;
+    left: 19px;
+    width: 33px;
+    height: 33px;
+  }
+
+  &__upper-info::after {
+    content: '';
+    background-image: url('../images/right-lower-angle-comp.png');
+    position: absolute;
+    right: 19px;
+    bottom: 19px;
+    width: 33px;
+    height: 33px;
+  }
+
+  &__lower-info::before {
+    content: '';
+    background-image: url('../images/left-lower-angle-comp.png');
+    position: absolute;
+    left: 19px;
+    bottom: 19px;
+    width: 33px;
+    height: 33px;
+  }
+
+  &__lower-info::after {
+    content: '';
+    background-image: url('../images/right-upper-angle-comp.png');
+    position: absolute;
+    right: 19px;
+    top: 19px;
+    width: 33px;
+    height: 33px;
+  }
+
+  &__info-text {
+    margin-top: 20px;
+  }
+
+  &_img {
+    width: 570px;
+    height: 428px;
+  }
+
+  &__upper {
+    margin-top: 64px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__lower {
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__info-heading {
+    @include font($secondary-font, $primary-weight, 24px);
+    line-height: 25px;
+    color: #4e5665;
+  }
+
+  &__info-text {
+    @include font($primary-font, $primary-weight);
+    line-height: 28px;
+    color: #505050;
+  }
+
+  &_upper-img {
+    margin-left: -70px; // размеры
+  }
+
+  &_lower-img {
+    margin-right: -70px; // размеры
+  }
+
+  // .about__upper-info {
+
+  // }
+
+}
+
+.artefact {
+  padding-top: 120px;
+  // сделать прозрачность
+
+  &__container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding-bottom: 80px;
+    border-bottom: 1px solid #d0d4d8;
+  }
+
+  &__heading {
+    text-align: center;
+    @include font($secondary-font, $primary-weight, 32px);
+    line-height: 38px;
+    color: #4E5665;
+    margin-bottom: 110px;
+  }
+
+  &__car {
+    background-image: url('../images/car-comp.png');
+    background-repeat: no-repeat;
+    background-size: cover; // contain для адаптива мб
+    max-width: 1170px;
+    height: 330px;
+    position: relative; 
+    box-shadow: 0px 20px 13px -20px rgba(0, 0, 0, 0.5);
+  }
+
+  &__car-point {
+    width: 43px;
+    height: 43px;
+    position: absolute;
+    background-color: #ECB84C;
+    border-radius: 50%;
+    opacity: 0.75;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__car-point-1 {
+    left: 0;
+    top: 180px;
+  }
+
+  &__car-point-2 {
+    left: 460px;
+    top: 180px;
+  }
+
+  &__car-point-3 {
+    top: 140px;
+    right: 310px;
+  }
+
+  &__car-point-core {
+    width: 13px;
+    height: 13px;
+    background-color: #FFD600;
+    border-radius: 50%;
+  }
+
+  // &__car-point-core:hover {
+  //   // сделать наведение в js
+  //   transition: all 0.3s ease;
+  //   transform: scale(2.3);
+  // }
+
+  &__car-point::after {
+    // сделать наведение в js
+    content: '';
+    position: absolute;
+    background-image: url('../images/show-line-comp.png');
+    background-repeat: no-repeat;
+    width: 325px;
+    height: 210px;
+    display: none;
+  }
+
+  &__car-point-1:hover::after {
+    display: block;
+    left: 30px;
+    top: -150px;
+  }
+
+  &__car-point-2:hover::after {
+    display: block;
+    left: 30px;
+    top: -150px;
+  }
+
+  &__car-point-3:hover::after {
+    display: block;
+    left: 30px;
+    top: -150px;
+  }
+
+  &__car-point::before {
+    @include font($primary-font, $secondary-weight, 18.6px);
+    line-height: 37px;
+    color: #505050;
+    position: absolute;
+    display: none;
+  }
+
+  &__car-point-1:hover::before {
+    content: 'Ретро дизайн';
+    display: block;
+    left: 220px;
+    top: -190px;
+    width: 180px;
+  }
+
+  &__car-point-2:hover::before {
+    content: 'Яркий цвет';
+    display: block;
+    left: 220px;
+    top: -190px;
+    width: 180px;
+  }
+
+  &__car-point-3:hover::before {
+    content: 'Откидная крыша';
+    display: block;
+    left: 190px;
+    top: -190px;
+    width: 180px;
+  }
+
+  &__text {
+    @include font($primary-font, $primary-weight);
+    line-height: 28px;
+    color: #505050;
+    margin-top: 70px;
+  }
+
+}
+
+.photo {
+  padding-top: 80px;
+  padding-bottom: 80px;
+
+  &__heading {
+    @include font($secondary-font, $primary-weight, 32px);
+    line-height: 38px;
+    color: #4E5665;
+    text-align: center;
+  }
+
+  &__text {
+    @include font($primary-font, $primary-weight);
+    line-height: 28px;
+    color: #505050;
+    margin-top: 42px;
+    margin-bottom: 48px;
+  }
+
+  &__decor-line {
+    width: 270px;
+    height: 1px;
+    background-color: #D0D4D8;
+    opacity: 0.5;
+    margin: 0 auto;
+    margin-bottom: 56px;
+  }
+  &__carousel {
+    width: 640px;
+    height: 480px;
+    box-shadow: 0px 0px 10px 5px rgba(34, 60, 80, 0.2);
+  }
+
+
+  .swiper-btn-container {
+    position: relative;
+    width: 640px;
+    margin: 0 auto;
+  }
+  
+  .swiper-btn {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: $primary-color;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    border-radius: 50%;
+  }
+  
+  .swiper-btn::after {
+    display: none;
+  }
+  
+  .swiper-button-prev {
+    top: 240px;
+    left: -20px;
+    background-image: url(../images/left-arrow-comp.png);
+  }
+  
+  .swiper-button-next {
+    top: 240px;
+    right: -20px;
+    background-image: url(../images/right-arrow-comp.png);
+  }
+}
+
+.footer {
+  padding-top: 55px;
+  padding-bottom: 32px;
+  background-color: #f8f8f8;
+
+  &__container {
+    margin: 0 auto;
+    max-width: 900px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+  }
+
+  &__heading {
+    @include font($primary-font, $secondary-weight, 15px);
+    line-height: 20px;
+    color: #4E5665;
+  }
+
+  &__list {
+    margin-top: 20px;
+  }
+
+  &__list-item {
+    margin-bottom: 20px;
+  }
+
+  &__list-item--message::before {
+    content: url('../images/message-comp.png'); 
+    vertical-align: middle;   
+  }
+
+  &__list-item--fb::before {
+    content: url('../images/fb-comp.png');
+    vertical-align: middle; 
+  }
+
+  &__list-item--inst::before {
+    content: url('../images/inst-comp.png');
+    vertical-align: middle; 
+  }
+
+  &__list-item--youtube::before {
+    content: url('../images/youtube-comp.png');
+    vertical-align: middle; 
+  }
+
+  &__list-item--email::before {
+    content: url('../images/email-comp.png');
+    vertical-align: middle; 
+  }
+
+  &__list-link {
+    @include font($primary-font, $primary-weight, 14px);
+    line-height: 19px;
+    color: #505050;
+  }
+
+  &__contacts-list-link {
+    padding-left: 10px;
+  }
+
+  &__copyright {
+    @include font($primary-font, $primary-weight, 14px);
+    line-height: 19px;
+    color: #505050;
+    text-align: center;
+    margin-top: 40px;
+  }
+
+}
