@@ -7,7 +7,9 @@ $secondary-font: Georgia;
 $primary-weight: 400;
 $secondary-weight: 700;
 
-@mixin font($family, $weight, $size: 16px) {
+$default-font-size: 16px;
+
+@mixin font($family, $weight, $size: 1rem) {
   font: {
     family: $family;
     weight: $weight;
@@ -17,6 +19,7 @@ $secondary-weight: 700;
 
 html {
   box-sizing: border-box;
+  font-size: $default-font-size;
 }
 
 *,
@@ -25,7 +28,6 @@ html {
   box-sizing: inherit;
   @include font($primary-font, $primary-weight);
   font-style: normal;
-  box-sizing: border-box;
 }
 
 a {
@@ -74,8 +76,8 @@ img {
   }
 
   &__main-heading {
-    @include font($secondary-font, $secondary-weight, 200px);
-    line-height: 227px;
+    @include font($secondary-font, $secondary-weight, 12.5rem);
+    line-height: 14rem;
     color: #fff;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
     margin: auto;
@@ -83,19 +85,19 @@ img {
 
   @media screen and (max-width: 650px) {
     &__main-heading {
-      font-size: 150px;
+      font-size: 9rem;
     }
   }
 
   @media screen and (max-width: 520px) {
     &__main-heading {
-      font-size: 100px;
+      font-size: 6.25rem;
     }
   }
 
   &__slogan {
-    @include font($secondary-font, $primary-weight, 24px);
-    line-height: 27px;
+    @include font($secondary-font, $primary-weight, 1.5rem);
+    line-height: 2rem;
     color: #fff;
     margin-bottom: -13.5px;
     display: flex;
@@ -106,13 +108,13 @@ img {
 
   @media screen and (max-width: 650px) {
     &__slogan {
-      font-size: 20px;
+      font-size: 1.25rem;
     }
   }
 
   @media screen and (max-width: 520px) {
     &__slogan {
-      font-size: 14px;
+      font-size: .875rem;
     }
   }
 
@@ -140,7 +142,7 @@ img {
   }
 
   @media screen and (max-width: 716px) {
-    &__lower{
+    &__lower {
       padding-bottom: 0;
     }
   }
@@ -161,7 +163,7 @@ img {
 
   &__menu-link {
     @include font($primary-font, $secondary-weight, 14px);
-    line-height: 19px;
+    line-height: 1.2rem;
     color: #909090;
     padding: 24px 20px 16px; // посмотреть реальные расстояния
     border-bottom: 4px solid transparent;
@@ -182,6 +184,12 @@ img {
 .benefit {
   padding-top: 85px;
 
+  @media screen and (max-width: 768px) {
+    & {
+      padding-top: 50px;
+    }
+  }
+
   &__container {
     max-width: 1170px;
     padding-right: 100px;
@@ -189,17 +197,31 @@ img {
     border-bottom: 1px solid $secondary-color; // задать прозрачность
   }
 
+  @media screen and (max-width: 1170px) { // 768
+    &__container {
+      padding-right: 50px;
+      padding-left: 50px;
+    }
+  }
+
+
   &__heading {
-    @include font(inherit, $primary-weight, 32px);
-    line-height: 38px;
+    @include font(inherit, $primary-weight, 2rem);
+    line-height: 2.4rem;
     color: #4e5665;
     text-align: center;
+  }
+
+  @media screen and (max-width: 768px) {
+    &__heading {
+      font-size: 1.5rem;
+    }
   }
 
   &__text {
     margin-top: 22px;
     @include font($primary-font, $primary-weight);
-    line-height: 28px;
+    line-height: 1.75rem;
     color: #505050;
   }
 
@@ -207,7 +229,7 @@ img {
     text-align: end;
     display: block;
     @include font($primary-font, $secondary-weight); // ?
-    line-height: 28px;
+    line-height: 1.75rem;
     color: $primary-color;
   }
 
@@ -232,8 +254,8 @@ img {
 
   &__counter {
     display: block;
-    @include font($primary-font, $secondary-weight, 22px);
-    line-height: 30px;
+    @include font($primary-font, $secondary-weight, 1.375rem);
+    line-height: 2rem;
     color: #4e5665;
     text-align: center;
     margin-top: 32px;
@@ -241,8 +263,8 @@ img {
 
   &__feature-heading {
     display: block;
-    @include font($primary-font, $secondary-weight, 14px);
-    line-height: 17px;
+    @include font($primary-font, $secondary-weight, .875rem);
+    line-height: 1.1rem;
     color: #909090;
     text-align: center;
   }
@@ -251,35 +273,51 @@ img {
 .about {
   padding-top: 80px;
 
-  // &__container {
+  @media screen and (max-width: 768px) {
+    & {
+      padding-top: 50px;
+    }
+  }
 
-  // }
+  @media screen and (max-width: 1170px) { // 768
+    &__container {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+  }
 
   &__heading {
-    @include font(inherit, $primary-weight, 32px);
+    @include font(inherit, $primary-weight, 2rem);
     line-height: 38px;
     color: #4e5665;
     text-align: center;
   }
 
+  @media screen and (max-width: 768px) {
+    &__heading {
+      font-size: 1.5rem;
+    }
+  }
+
   &__text {
     @include font($primary-font, $primary-weight);
-    line-height: 28px;
+    line-height: 1.75rem;
     color: #505050;
     margin-top: 13px;
   }
 
-  &__info {
-    width: 470px;
-    // height: 290px;
-    padding: 35px 40px 35px;
-    z-index: 1;
-    background-color: #fff;
-    position: relative;
+  &__upper {
+    margin-top: 64px;
+    display: flex;
+    align-items: center;
   }
 
-  &__info-text {
-    margin-top: 20px;
+  @media screen and (max-width: 990px) { // 768
+    &__upper,
+    &__lower {
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
   }
 
   &__upper-info::before {
@@ -322,6 +360,67 @@ img {
     height: 33px;
   }
 
+  &__lower {
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 990px) {
+    &__lower {
+      margin-top: 50px;
+    }
+  }
+
+  &__info-heading {
+    @include font($secondary-font, $primary-weight, 1.5rem);
+    line-height: 1.5rem;
+    color: #4e5665;
+  }
+
+  &__info-text {
+    @include font($primary-font, $primary-weight);
+    line-height: 1.75rem;
+    color: #505050;
+  }
+
+  &_upper-img {
+    margin-left: -70px; // размеры
+  }
+
+  @media screen and (max-width: 990px) { // 768
+    &_upper-img {
+      text-align: center; // ? посмотреть у второй картинки
+    }
+  }
+
+  &_lower-img {
+    margin-right: -70px; // размеры
+  }
+
+  @media screen and (max-width: 990px) { // 768
+    &_lower-img {
+      margin-right: 0;
+    }
+  }
+
+  &__info {
+    width: 470px;
+    // height: 290px;
+    padding: 35px 40px 35px;
+    z-index: 1;
+    background-color: #fff;
+    position: relative;
+  }
+
+  @media screen and (max-width: 990px) { // 768
+    &__info {
+      width: auto;
+      order: 0; // ?
+    }
+  }
+
+
   &__info-text {
     margin-top: 20px;
   }
@@ -331,47 +430,32 @@ img {
     height: 428px;
   }
 
-  &__upper {
-    margin-top: 64px;
-    display: flex;
-    align-items: center;
+  @media screen and (max-width: 990px) { // 768
+    &_img {
+      margin: 0 auto;
+      order: 1;
+    }
   }
 
-  &__lower {
-    margin-top: 100px;
-    display: flex;
-    align-items: center;
+  @media screen and (max-width: 768px) { // 768
+    &_img {
+      width: 400px;
+      height: 300px;
+    }
   }
 
-  &__info-heading {
-    @include font($secondary-font, $primary-weight, 24px);
-    line-height: 25px;
-    color: #4e5665;
-  }
-
-  &__info-text {
-    @include font($primary-font, $primary-weight);
-    line-height: 28px;
-    color: #505050;
-  }
-
-  &_upper-img {
-    margin-left: -70px; // размеры
-  }
-
-  &_lower-img {
-    margin-right: -70px; // размеры
-  }
-
-  // .about__upper-info {
-
-  // }
 
 }
 
 .artefact {
   padding-top: 120px;
   // сделать прозрачность
+
+  @media screen and (max-width: 768px) {
+    & {
+      padding-top: 50px;
+    }
+  }
 
   &__container {
     max-width: 1170px;
@@ -380,22 +464,51 @@ img {
     border-bottom: 1px solid #d0d4d8;
   }
 
+  @media screen and (max-width: 768px) {
+    &__container {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+  }
+
   &__heading {
     text-align: center;
-    @include font($secondary-font, $primary-weight, 32px);
-    line-height: 38px;
+    @include font($secondary-font, $primary-weight, 2rem);
+    line-height: 2.4rem;
     color: #4E5665;
     margin-bottom: 110px;
   }
 
+  @media screen and (max-width: 768px) {
+    &__heading {
+      margin-bottom: 50px;
+      font-size: 1.5rem;
+    }
+  }
+
   &__car {
+    position: relative;
+    max-width: 1170px;
+    height: 330px;
+    box-shadow: 0px 20px 13px -20px rgba(0, 0, 0, 0.5);
     background-image: url('../images/car-comp.png');
     background-repeat: no-repeat;
     background-size: cover; // contain для адаптива мб
-    max-width: 1170px;
-    height: 330px;
-    position: relative;
-    box-shadow: 0px 20px 13px -20px rgba(0, 0, 0, 0.5);
+  }
+
+  @media screen and (max-width: 768px) {
+    &__car {
+      height: 150px;
+      margin: 0 auto;
+      background-size: contain;
+      background-position: center 0;
+    }
+  }
+
+  @media screen and (max-width: 650px) {
+    &__car {
+      box-shadow: none;
+    }
   }
 
   &__car-point {
@@ -408,6 +521,12 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  @media screen and (max-width: 1015px) {
+    &__car-point {
+      display: none;
+    }
   }
 
   &__car-point-1 {
@@ -438,14 +557,7 @@ img {
     border-radius: 50%;
   }
 
-  // &__car-point-core:hover {
-  //   // сделать наведение в js
-  //   transition: all 0.3s ease;
-  //   transform: scale(2.3);
-  // }
-
   &__car-point::after {
-    // сделать наведение в js
     content: '';
     position: absolute;
     background-image: url('../images/show-line-comp.png');
@@ -474,8 +586,8 @@ img {
   }
 
   &__car-point::before {
-    @include font($primary-font, $secondary-weight, 18.6px);
-    line-height: 37px;
+    @include font($primary-font, $secondary-weight, 1.125rem);
+    line-height: 2.4rem;
     color: #505050;
     position: absolute;
     display: none;
@@ -507,9 +619,16 @@ img {
 
   &__text {
     @include font($primary-font, $primary-weight);
-    line-height: 28px;
+    line-height: 1.75rem;
     color: #505050;
     margin-top: 70px;
+  }
+
+  @media screen and (max-width: 1170px) {
+    &__text {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
   }
 
 }
@@ -518,16 +637,29 @@ img {
   padding-top: 80px;
   padding-bottom: 80px;
 
+  @media screen and (max-width: 1170px) { // 768
+    &__container {
+      padding-right: 50px;
+      padding-left: 50px;
+    }
+  }
+
   &__heading {
-    @include font($secondary-font, $primary-weight, 32px);
-    line-height: 38px;
+    @include font($secondary-font, $primary-weight, 2rem);
+    line-height: 2.4rem;
     color: #4E5665;
     text-align: center;
   }
 
+  @media screen and (max-width: 768px) {
+    &__heading {
+      font-size: 1.5rem;
+    }
+  }
+
   &__text {
     @include font($primary-font, $primary-weight);
-    line-height: 28px;
+    line-height: 1.75rem;
     color: #505050;
     margin-top: 42px;
     margin-bottom: 48px;
@@ -553,6 +685,26 @@ img {
     position: relative;
     width: 640px;
     margin: 0 auto;
+  }
+
+  @media screen and (max-width: 768px) {
+    .swiper-btn-container {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .swiper-container {
+      width: 400px;
+      height: 300px;
+      background-size: cover;
+    }
+
+    .swiper-slide-img {
+      width: 400px;
+      height: 300px;
+      background-size: cover;
+    }
   }
 
   .swiper-btn {
@@ -597,9 +749,23 @@ img {
     flex-wrap: wrap;
   }
 
+  @media screen and (max-width: 990px) {
+    &__container {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+  }
+
+  @media screen and (max-width: 850px) {
+    &__item {
+      margin-right: 30px;
+      margin-bottom: 20px;
+    }
+  }
+
   &__heading {
-    @include font($primary-font, $secondary-weight, 15px);
-    line-height: 20px;
+    @include font($primary-font, $secondary-weight);
+    line-height: 1.25rem;
     color: #4E5665;
   }
 
@@ -637,8 +803,8 @@ img {
   }
 
   &__list-link {
-    @include font($primary-font, $primary-weight, 14px);
-    line-height: 19px;
+    @include font($primary-font, $primary-weight, .875rem);
+    line-height: 1.2rem;
     color: #505050;
   }
 
@@ -647,11 +813,10 @@ img {
   }
 
   &__copyright {
-    @include font($primary-font, $primary-weight, 14px);
-    line-height: 19px;
+    @include font($primary-font, $primary-weight, .875rem);
+    line-height: 1.2rem;
     color: #505050;
     text-align: center;
     margin-top: 40px;
   }
-
 }
