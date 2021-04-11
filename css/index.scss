@@ -80,7 +80,7 @@ img {
     margin: auto;
     @include font($secondary-font, $secondary-weight, 12.5rem);
     line-height: 14rem;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, .5);
     color: #fff;
   }
 
@@ -103,7 +103,7 @@ img {
     @include font($secondary-font, $primary-weight, 1.5rem);
     line-height: 2rem;
     white-space: nowrap;
-    text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.5);
+    text-shadow: 0px 2px 1px rgba(0, 0, 0, .5);
     color: #fff;
   }
 
@@ -569,7 +569,7 @@ img {
     position: relative;
     max-width: 1170px;
     height: 330px;
-    box-shadow: 0px 20px 13px -20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 20px 13px -20px rgba(0, 0, 0, .5);
     background-image: url('../images/car-comp.png');
     background-repeat: no-repeat;
     background-size: cover;
@@ -606,7 +606,7 @@ img {
     height: 43px;
     border-radius: 50%;
     background-color: #ECB84C;
-    opacity: 0.75;
+    opacity: .75;
   }
 
   @media screen and (max-width: 1015px) {
@@ -782,7 +782,7 @@ img {
   &__carousel {
     width: 640px; 
     height: 480px; 
-    box-shadow: 0px 0px 10px 5px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 0px 10px 5px rgba(34, 60, 80, .2);
   }
 
   .swiper-btn-container {

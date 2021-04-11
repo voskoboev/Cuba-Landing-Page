@@ -664,7 +664,7 @@ img {
   height: 43px;
   border-radius: 50%;
   background-color: #ECB84C;
-  opacity: 0.75;
+  opacity: .75;
 }
 
 @media screen and (max-width: 1015px) {
