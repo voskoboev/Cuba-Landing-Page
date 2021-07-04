@@ -1,0 +1,25 @@
+html {
+  box-sizing: border-box;
+  font-size: $default-font-size;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  @include font($primary-font, $primary-weight);
+  font-style: normal;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  object-fit: contain;
+}
+
+.container {
+  max-width: 970px;
+  margin: 0 auto;
+}

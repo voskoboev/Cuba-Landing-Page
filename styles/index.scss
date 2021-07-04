@@ -1,62 +1,16 @@
-$primary-color: #ecb84c;
-$secondary-color: #d0d4d8;
-
-$primary-font: Lato;
-$secondary-font: Georgia;
-
-$primary-weight: 400;
-$secondary-weight: 700;
-
-$default-font-size: 16px;
-
-@mixin font($family, $weight, $size: 1rem) {
-  font: {
-    family: $family;
-    weight: $weight;
-    size: $size;
-  }
-}
-
-html {
-  box-sizing: border-box;
-  font-size: $default-font-size;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-  @include font($primary-font, $primary-weight);
-  font-style: normal;
-}
-
-a {
-  text-decoration: none;
-}
-
-img {
-  object-fit: contain;
-}
-
-.container {
-  max-width: 970px;
-  margin: 0 auto;
-}
+@import "./_vars";
+@import "./_mixins";
+@import "./_global";
 
 .header {
-
   &__upper {
     width: 100%;
     height: 100vh;
     padding: 40px;
-    background-image: url(../images/header-cuba-comp.jpg);
+    background: url("../images/header-cuba-comp.jpg") center center no-repeat;
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
 
-  @media screen and (max-width: 520px) {
-    &__upper {
+    @media screen and (max-width: 520px) {
       height: 350px;
       padding: 20px;
     }
@@ -68,66 +22,56 @@ img {
     height: 100%;
     border: 1px solid $primary-color;
     border-bottom: none;
-  }
 
-  @media screen and (max-width: 520px) {
-    &__frame {
+    @media screen and (max-width: 520px) {
       height: 300px;
     }
   }
 
   &__main-heading {
-    margin: auto;
     @include font($secondary-font, $secondary-weight, 12.5rem);
-    line-height: 14rem;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, .5);
-    color: #fff;
-  }
 
-  @media screen and (max-width: 650px) {
-    &__main-heading {
+    margin: auto;
+    line-height: 14rem;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    color: #fff;
+
+    @media screen and (max-width: 650px) {
       font-size: 9rem;
     }
-  }
 
-  @media screen and (max-width: 520px) {
-    &__main-heading {
+    @media screen and (max-width: 520px) {
       font-size: 6.25rem;
     }
   }
 
   &__slogan {
+    @include font($secondary-font, $primary-weight, 1.5rem);
+
     display: flex;
     align-items: center;
     margin-bottom: -13.5px;
-    @include font($secondary-font, $primary-weight, 1.5rem);
     line-height: 2rem;
     white-space: nowrap;
-    text-shadow: 0px 2px 1px rgba(0, 0, 0, .5);
+    text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.5);
     color: #fff;
-  }
 
-  @media screen and (max-width: 650px) {
-    &__slogan {
+    @media screen and (max-width: 650px) {
       font-size: 1.25rem;
     }
-  }
 
-  @media screen and (max-width: 520px) {
-    &__slogan {
-      font-size: .875rem;
+    @media screen and (max-width: 520px) {
+      font-size: 0.875rem;
     }
-  }
 
-  @media screen and (max-width: 365px) {
-    &__slogan {
-      font-size: .65rem;
+    @media screen and (max-width: 365px) {
+      font-size: 0.65rem;
     }
   }
 
   &__slogan::before,
   &__slogan::after {
-    content: '';
+    content: "";
     width: 100%;
     border-top: 1px solid $primary-color;
   }
@@ -146,10 +90,8 @@ img {
     padding: 24px 20px 18px;
     border-bottom: 1px solid $secondary-color;
     text-align: center;
-  }
 
-  @media screen and (max-width: 716px) {
-    &__lower {
+    @media screen and (max-width: 716px) {
       padding-bottom: 0;
     }
   }
@@ -168,15 +110,14 @@ img {
   }
 
   &__menu-link {
+    @include font($primary-font, $secondary-weight, 14px);
+
     padding: 24px 20px 16px;
     border-bottom: 4px solid transparent;
-    @include font($primary-font, $secondary-weight, 14px);
     line-height: 1.2rem;
     color: #909090;
-  }
 
-  @media screen and (max-width: 716px) {
-    &__menu-link {
+    @media screen and (max-width: 716px) {
       border-bottom: none !important;
     }
   }
@@ -191,54 +132,46 @@ img {
   padding-top: 85px;
 
   @media screen and (max-width: 768px) {
-    & {
-      padding-top: 50px;
-    }
+    padding-top: 50px;
   }
 
   &__container {
     max-width: 1170px;
     padding-right: 100px;
     padding-left: 100px;
-    border-bottom: 1px solid $secondary-color; 
-  }
+    border-bottom: 1px solid $secondary-color;
 
-  @media screen and (max-width: 1170px) {
-    &__container {
+    @media screen and (max-width: 1170px) {
       padding-right: 50px;
       padding-left: 50px;
     }
-  }
 
-  @media screen and (max-width: 520px) {
-    &__container {
+    @media screen and (max-width: 520px) {
       padding-left: 30px;
       padding-right: 30px;
     }
   }
 
   &__heading {
-    text-align: center;
     @include font(inherit, $primary-weight, 2rem);
+
+    text-align: center;
     line-height: 2.4rem;
     color: #4e5665;
-  }
 
-  @media screen and (max-width: 768px) {
-    &__heading {
+    @media screen and (max-width: 768px) {
       font-size: 1.5rem;
     }
   }
 
   &__text {
-    margin-top: 22px;
     @include font($primary-font, $primary-weight);
+
+    margin-top: 22px;
     line-height: 1.75rem;
     color: #505050;
-  }
 
-  @media screen and (max-width: 1175px) {
-    &__text {
+    @media screen and (max-width: 1175px) {
       margin-bottom: 15px;
     }
   }
@@ -249,10 +182,10 @@ img {
     @include font($primary-font, $secondary-weight);
     line-height: 1.75rem;
     color: $primary-color;
-  }
 
-  &__readmore::after {
-    content: '››';
+    &::after {
+      content: "››";
+    }
   }
 
   &__feature-container {
@@ -261,10 +194,8 @@ img {
     flex-wrap: wrap;
     max-width: 810px;
     margin: 36px auto 80px;
-  }
 
-  @media screen and (max-width: 356px) {
-    &__feature-container {
+    @media screen and (max-width: 356px) {
       justify-content: center;
     }
   }
@@ -277,7 +208,6 @@ img {
   }
 
   @media screen and (max-width: 500px) {
-
     &__feature:first-child,
     &__feature:nth-child(2) {
       margin-bottom: 20px;
@@ -301,7 +231,7 @@ img {
   &__feature-heading {
     display: block;
     text-align: center;
-    @include font($primary-font, $secondary-weight, .875rem);
+    @include font($primary-font, $secondary-weight, 0.875rem);
     line-height: 1.1rem;
     color: #909090;
   }
@@ -311,34 +241,29 @@ img {
   padding-top: 80px;
 
   @media screen and (max-width: 768px) {
-    & {
-      padding-top: 50px;
-    }
+    padding-top: 50px;
   }
 
-  @media screen and (max-width: 1170px) {
-    &__container {
+  &__container {
+    @media screen and (max-width: 1170px) {
       padding-left: 50px;
       padding-right: 50px;
     }
-  }
 
-  @media screen and (max-width: 520px) {
-    &__container {
+    @media screen and (max-width: 520px) {
       padding-left: 20px;
       padding-right: 20px;
     }
   }
 
   &__heading {
-    text-align: center;
     @include font(inherit, $primary-weight, 2rem);
+
+    text-align: center;
     line-height: 38px;
     color: #4e5665;
-  }
 
-  @media screen and (max-width: 768px) {
-    &__heading {
+    @media screen and (max-width: 768px) {
       font-size: 1.5rem;
     }
   }
@@ -366,85 +291,81 @@ img {
   }
 
   &__upper-info::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 19px;
     left: 19px;
     width: 33px;
     height: 33px;
-    background-image: url('../images/left-upper-angle-comp.png');
+    background-image: url("../images/left-upper-angle-comp.png");
   }
 
   &__upper-info::after {
-    content: '';
+    content: "";
     position: absolute;
     right: 19px;
     bottom: 19px;
     width: 33px;
     height: 33px;
-    background-image: url('../images/right-lower-angle-comp.png');
+    background-image: url("../images/right-lower-angle-comp.png");
   }
 
   &__lower-info::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 19px;
     bottom: 19px;
     width: 33px;
     height: 33px;
-    background-image: url('../images/left-lower-angle-comp.png');
+    background-image: url("../images/left-lower-angle-comp.png");
   }
 
   &__lower-info::after {
-    content: '';
+    content: "";
     position: absolute;
     right: 19px;
     top: 19px;
     width: 33px;
     height: 33px;
-    background-image: url('../images/right-upper-angle-comp.png');
+    background-image: url("../images/right-upper-angle-comp.png");
   }
 
   &__lower {
     display: flex;
     align-items: center;
     margin-top: 100px;
-  }
 
-  @media screen and (max-width: 990px) {
-    &__lower {
+    @media screen and (max-width: 990px) {
       margin-top: 25px;
     }
   }
 
   &__info-heading {
     @include font($secondary-font, $primary-weight, 1.5rem);
+
     line-height: 1.5rem;
     color: #4e5665;
   }
 
   &__info-text {
     @include font($primary-font, $primary-weight);
+
     line-height: 1.75rem;
     color: #505050;
   }
 
   &_upper-img {
-    margin-left: -70px; 
-  }
+    margin-left: -70px;
 
-  @media screen and (max-width: 990px) {
-    &_upper-img {
+    @media screen and (max-width: 990px) {
       text-align: center;
     }
   }
 
   &_lower-img {
-    margin-right: -70px; 
-  }
+    margin-right: -70px;
 
-  @media screen and (max-width: 990px) {
-    &_lower-img {
+    @media screen and (max-width: 990px) {
       margin-right: 0;
     }
   }
@@ -455,17 +376,13 @@ img {
     padding: 35px 40px 35px;
     background-color: #fff;
     z-index: 1;
-  }
 
-  @media screen and (max-width: 990px) {
-    &__info {
+    @media screen and (max-width: 990px) {
       width: auto;
-      order: 0; 
+      order: 0;
     }
-  }
 
-  @media screen and (max-width: 500px) {
-    &__info {
+    @media screen and (max-width: 500px) {
       padding: 30px;
     }
   }
@@ -477,31 +394,23 @@ img {
   &__img {
     width: 570px;
     height: 428px;
-  }
 
-  @media screen and (max-width: 990px) {
-    &__img {
+    @media screen and (max-width: 990px) {
       margin: 0 auto;
       order: 1;
     }
-  }
 
-  @media screen and (max-width: 768px) {
-    &__img {
+    @media screen and (max-width: 768px) {
       width: 400px;
       height: 300px;
     }
-  }
 
-  @media screen and (max-width: 500px) {
-    &__img {
+    @media screen and (max-width: 500px) {
       width: 300px;
       height: 200px;
     }
-  }
 
-  @media screen and (max-width: 335px) {
-    &__img {
+    @media screen and (max-width: 335px) {
       width: 250px;
       height: 200px;
     }
@@ -511,10 +420,8 @@ img {
 .artefact {
   padding-top: 120px;
 
-  @media screen and (max-width: 990px) { 
-    & {
-      padding-top: 50px;
-    }
+  @media screen and (max-width: 990px) {
+    padding-top: 50px;
   }
 
   &__container {
@@ -522,23 +429,17 @@ img {
     padding-bottom: 80px;
     border-bottom: 1px solid #d0d4d8;
     margin: 0 auto;
-  }
 
-  @media screen and (max-width: 990px) {
-    &__container {
+    @media screen and (max-width: 990px) {
       padding-bottom: 60px;
     }
-  }
 
-  @media screen and (max-width: 768px) {
-    &__container {
+    @media screen and (max-width: 768px) {
       padding-left: 50px;
       padding-right: 50px;
     }
-  }
 
-  @media screen and (max-width: 520px) {
-    &__container {
+    @media screen and (max-width: 520px) {
       padding-left: 20px;
       padding-right: 20px;
     }
@@ -549,17 +450,13 @@ img {
     margin-bottom: 110px;
     @include font($secondary-font, $primary-weight, 2rem);
     line-height: 2.4rem;
-    color: #4E5665;
-  }
+    color: #4e5665;
 
-  @media screen and (max-width: 990px) {
-    &__heading {
+    @media screen and (max-width: 990px) {
       margin-bottom: 60px;
     }
-  }
 
-  @media screen and (max-width: 768px) {
-    &__heading {
+    @media screen and (max-width: 768px) {
       margin-bottom: 50px;
       font-size: 1.5rem;
     }
@@ -569,29 +466,23 @@ img {
     position: relative;
     max-width: 1170px;
     height: 330px;
-    box-shadow: 0px 20px 13px -20px rgba(0, 0, 0, .5);
-    background-image: url('../images/car-comp.png');
+    box-shadow: 0px 20px 13px -20px rgba(0, 0, 0, 0.5);
+    background-image: url("../images/car-comp.png");
     background-repeat: no-repeat;
     background-size: cover;
-  }
 
-  @media screen and (max-width: 768px) {
-    &__car {
+    @media screen and (max-width: 768px) {
       height: 150px;
       margin: 0 auto;
       background-size: contain;
       background-position: center 0;
     }
-  }
 
-  @media screen and (max-width: 650px) {
-    &__car {
+    @media screen and (max-width: 650px) {
       box-shadow: none;
     }
-  }
 
-  @media screen and (max-width: 500px) {
-    &__car {
+    @media screen and (max-width: 500px) {
       background-size: cover;
       background-position: 0 0;
     }
@@ -605,34 +496,91 @@ img {
     width: 43px;
     height: 43px;
     border-radius: 50%;
-    background-color: #ECB84C;
-    opacity: .75;
-  }
+    background-color: #ecb84c;
+    opacity: 0.75;
 
-  @media screen and (max-width: 1015px) {
-    &__car-point {
+    @media screen and (max-width: 1015px) {
       display: none;
+    }
+
+    &::before {
+      @include font($primary-font, $secondary-weight, 1.125rem);
+
+      position: absolute;
+      display: none;
+      color: #505050;
+      line-height: 2.4rem;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: none;
+      width: 325px;
+      height: 210px;
+      background-image: url("../images/show-line-comp.png");
+      background-repeat: no-repeat;
     }
   }
 
   &__car-point-1 {
     top: 180px;
     left: 0;
+
+    &:hover::before {
+      content: "Ретро дизайн";
+      display: block;
+      width: 180px;
+      top: -190px;
+      left: 220px;
+    }
+
+    &:hover::after {
+      display: block;
+      top: -150px;
+      left: 30px;
+    }
   }
 
   &__car-point-2 {
     top: 180px;
     left: 460px;
+
+    &:hover::before {
+      content: "Яркий цвет";
+      display: block;
+      width: 180px;
+      top: -190px;
+      left: 220px;
+    }
+
+    &:hover::after {
+      display: block;
+      top: -150px;
+      left: 30px;
+    }
   }
 
   &__car-point-3 {
     top: 140px;
     right: 310px;
-  }
 
-  @media screen and (max-width: 1190px) {
-    &__car-point-3 {
+    @media screen and (max-width: 1190px) {
       display: none;
+    }
+
+    &:hover::before {
+      content: "Откидная крыша";
+      display: block;
+      width: 180px;
+      top: -190px;
+      left: 190px;
+    }
+
+    &:hover::after {
+      display: block;
+      top: -150px;
+      left: 30px;
     }
   }
 
@@ -640,85 +588,22 @@ img {
     width: 13px;
     height: 13px;
     border-radius: 50%;
-    background-color: #FFD600;
-  }
-
-  &__car-point::after {
-    content: '';
-    position: absolute;
-    display: none;
-    width: 325px;
-    height: 210px;
-    background-image: url('../images/show-line-comp.png');
-    background-repeat: no-repeat;
-  }
-
-  &__car-point-1:hover::after {
-    display: block;
-    top: -150px;
-    left: 30px;
-  }
-
-  &__car-point-2:hover::after {
-    display: block;
-    top: -150px;
-    left: 30px;
-  }
-
-  &__car-point-3:hover::after {
-    display: block;
-    top: -150px;
-    left: 30px;
-  }
-
-  &__car-point::before {
-    position: absolute;
-    display: none;
-    color: #505050;
-    @include font($primary-font, $secondary-weight, 1.125rem);
-    line-height: 2.4rem;
-  }
-
-  &__car-point-1:hover::before {
-    content: 'Ретро дизайн';
-    display: block;
-    width: 180px;
-    top: -190px;
-    left: 220px;
-  }
-
-  &__car-point-2:hover::before {
-    content: 'Яркий цвет';
-    display: block;
-    width: 180px;
-    top: -190px;
-    left: 220px;
-  }
-
-  &__car-point-3:hover::before {
-    content: 'Откидная крыша';
-    display: block;
-    width: 180px;
-    top: -190px;
-    left: 190px;
+    background-color: #ffd600;
   }
 
   &__text {
+    @include font($primary-font, $primary-weight);
+
     margin-top: 70px;
     color: #505050;
-    @include font($primary-font, $primary-weight);
     line-height: 1.75rem;
-  }
 
-  @media screen and (max-width: 1170px) {
-    &__text {
+    @media screen and (max-width: 1170px) {
       padding-left: 50px;
       padding-right: 50px;
     }
-  }
 
-  @media screen and (max-width: 520px) {
-    &__text {
+    @media screen and (max-width: 520px) {
       padding-left: 0;
       padding-right: 0;
     }
@@ -730,10 +615,8 @@ img {
   padding-bottom: 80px;
 
   @media screen and (max-width: 990px) {
-    & {
-     padding-top: 50px;
-     padding-bottom: 50px;
-    }
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
 
   @media screen and (max-width: 1170px) {
@@ -751,22 +634,22 @@ img {
   }
 
   &__heading {
-    text-align: center;
     @include font($secondary-font, $primary-weight, 2rem);
-    line-height: 2.4rem;
-    color: #4E5665;
-  }
 
-  @media screen and (max-width: 768px) {
-    &__heading {
+    text-align: center;
+    line-height: 2.4rem;
+    color: #4e5665;
+
+    @media screen and (max-width: 768px) {
       font-size: 1.5rem;
     }
   }
 
   &__text {
+    @include font($primary-font, $primary-weight);
+
     margin-top: 42px;
     margin-bottom: 48px;
-    @include font($primary-font, $primary-weight);
     line-height: 1.75rem;
     color: #505050;
   }
@@ -775,24 +658,22 @@ img {
     width: 270px;
     height: 1px;
     margin: 0 auto 56px;
-    background-color: #D0D4D8;
-    opacity: .5;
+    background-color: #d0d4d8;
+    opacity: 0.5;
   }
 
   &__carousel {
-    width: 640px; 
-    height: 480px; 
-    box-shadow: 0px 0px 10px 5px rgba(34, 60, 80, .2);
+    width: 640px;
+    height: 480px;
+    box-shadow: 0px 0px 10px 5px rgba(34, 60, 80, 0.2);
   }
 
   .swiper-btn-container {
     position: relative;
     width: 640px;
     margin: 0 auto;
-  }
 
-  @media screen and (max-width: 768px) {
-    .swiper-btn-container {
+    @media screen and (max-width: 768px) {
       display: none;
     }
   }
@@ -832,7 +713,6 @@ img {
     .swiper-slide-img {
       width: 260px;
       height: 195px;
-
     }
   }
 
@@ -845,10 +725,10 @@ img {
     background-size: 16px 16px;
     background-repeat: no-repeat;
     background-position: center;
-  }
 
-  .swiper-btn::after {
-    display: none;
+    &::after {
+      display: none;
+    }
   }
 
   .swiper-button-prev {
@@ -876,10 +756,8 @@ img {
     flex-wrap: wrap;
     max-width: 900px;
     margin: 0 auto;
-  }
 
-  @media screen and (max-width: 990px) {
-    &__container {
+    @media screen and (max-width: 990px) {
       padding-left: 50px;
       padding-right: 50px;
     }
@@ -894,8 +772,9 @@ img {
 
   &__heading {
     @include font($primary-font, $secondary-weight);
+
     line-height: 1.25rem;
-    color: #4E5665;
+    color: #4e5665;
   }
 
   &__list {
@@ -907,32 +786,33 @@ img {
   }
 
   &__list-item--message::before {
-    content: url('../images/message-comp.png');
+    content: url("../images/message-comp.png");
     vertical-align: middle;
   }
 
   &__list-item--fb::before {
-    content: url('../images/fb-comp.png');
+    content: url("../images/fb-comp.png");
     vertical-align: middle;
   }
 
   &__list-item--inst::before {
-    content: url('../images/inst-comp.png');
+    content: url("../images/inst-comp.png");
     vertical-align: middle;
   }
 
   &__list-item--youtube::before {
-    content: url('../images/youtube-comp.png');
+    content: url("../images/youtube-comp.png");
     vertical-align: middle;
   }
 
   &__list-item--email::before {
-    content: url('../images/email-comp.png');
+    content: url("../images/email-comp.png");
     vertical-align: middle;
   }
 
   &__list-link {
-    @include font($primary-font, $primary-weight, .875rem);
+    @include font($primary-font, $primary-weight, 0.875rem);
+
     line-height: 1.2rem;
     color: #505050;
   }
@@ -942,9 +822,10 @@ img {
   }
 
   &__copyright {
+    @include font($primary-font, $primary-weight, 0.875rem);
+
     text-align: center;
     margin-top: 40px;
-    @include font($primary-font, $primary-weight, .875rem);
     line-height: 1.2rem;
     color: #505050;
   }

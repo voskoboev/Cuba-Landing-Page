@@ -34,10 +34,8 @@ img {
   width: 100%;
   height: 100vh;
   padding: 40px;
-  background-image: url(../images/header-cuba-comp.jpg);
+  background: url("../images/header-cuba-comp.jpg") center center no-repeat;
   background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 @media screen and (max-width: 520px) {
@@ -67,10 +65,10 @@ img {
 }
 
 .header__main-heading {
-  margin: auto;
   font-family: Georgia;
   font-weight: 700;
   font-size: 12.5rem;
+  margin: auto;
   line-height: 14rem;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
   color: #fff;
@@ -89,6 +87,9 @@ img {
 }
 
 .header__slogan {
+  font-family: Georgia;
+  font-weight: 400;
+  font-size: 1.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -96,9 +97,6 @@ img {
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: -13.5px;
-  font-family: Georgia;
-  font-weight: 400;
-  font-size: 1.5rem;
   line-height: 2rem;
   white-space: nowrap;
   text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.5);
@@ -113,18 +111,18 @@ img {
 
 @media screen and (max-width: 520px) {
   .header__slogan {
-    font-size: .875rem;
+    font-size: 0.875rem;
   }
 }
 
 @media screen and (max-width: 365px) {
   .header__slogan {
-    font-size: .65rem;
+    font-size: 0.65rem;
   }
 }
 
 .header__slogan::before, .header__slogan::after {
-  content: '';
+  content: "";
   width: 100%;
   border-top: 1px solid #ecb84c;
 }
@@ -176,11 +174,11 @@ img {
 }
 
 .header__menu-link {
-  padding: 24px 20px 16px;
-  border-bottom: 4px solid transparent;
   font-family: Lato;
   font-weight: 700;
   font-size: 14px;
+  padding: 24px 20px 16px;
+  border-bottom: 4px solid transparent;
   line-height: 1.2rem;
   color: #909090;
 }
@@ -228,10 +226,10 @@ img {
 }
 
 .benefit__heading {
-  text-align: center;
   font-family: inherit;
   font-weight: 400;
   font-size: 2rem;
+  text-align: center;
   line-height: 2.4rem;
   color: #4e5665;
 }
@@ -243,10 +241,10 @@ img {
 }
 
 .benefit__text {
-  margin-top: 22px;
   font-family: Lato;
   font-weight: 400;
   font-size: 1rem;
+  margin-top: 22px;
   line-height: 1.75rem;
   color: #505050;
 }
@@ -268,7 +266,7 @@ img {
 }
 
 .benefit__readmore::after {
-  content: '››';
+  content: "››";
 }
 
 .benefit__feature-container {
@@ -356,10 +354,10 @@ img {
 }
 
 .about__heading {
-  text-align: center;
   font-family: inherit;
   font-weight: 400;
   font-size: 2rem;
+  text-align: center;
   line-height: 38px;
   color: #4e5665;
 }
@@ -402,7 +400,7 @@ img {
 }
 
 .about__upper-info::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 19px;
   left: 19px;
@@ -412,7 +410,7 @@ img {
 }
 
 .about__upper-info::after {
-  content: '';
+  content: "";
   position: absolute;
   right: 19px;
   bottom: 19px;
@@ -422,7 +420,7 @@ img {
 }
 
 .about__lower-info::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 19px;
   bottom: 19px;
@@ -432,7 +430,7 @@ img {
 }
 
 .about__lower-info::after {
-  content: '';
+  content: "";
   position: absolute;
   right: 19px;
   top: 19px;
@@ -599,7 +597,7 @@ img {
   font-weight: 400;
   font-size: 2rem;
   line-height: 2.4rem;
-  color: #4E5665;
+  color: #4e5665;
 }
 
 @media screen and (max-width: 990px) {
@@ -663,8 +661,8 @@ img {
   width: 43px;
   height: 43px;
   border-radius: 50%;
-  background-color: #ECB84C;
-  opacity: .75;
+  background-color: #ecb84c;
+  opacity: 0.75;
 }
 
 @media screen and (max-width: 1015px) {
@@ -673,14 +671,62 @@ img {
   }
 }
 
+.artefact__car-point::before {
+  font-family: Lato;
+  font-weight: 700;
+  font-size: 1.125rem;
+  position: absolute;
+  display: none;
+  color: #505050;
+  line-height: 2.4rem;
+}
+
+.artefact__car-point::after {
+  content: "";
+  position: absolute;
+  display: none;
+  width: 325px;
+  height: 210px;
+  background-image: url("../images/show-line-comp.png");
+  background-repeat: no-repeat;
+}
+
 .artefact__car-point-1 {
   top: 180px;
   left: 0;
 }
 
+.artefact__car-point-1:hover::before {
+  content: "Ретро дизайн";
+  display: block;
+  width: 180px;
+  top: -190px;
+  left: 220px;
+}
+
+.artefact__car-point-1:hover::after {
+  display: block;
+  top: -150px;
+  left: 30px;
+}
+
 .artefact__car-point-2 {
   top: 180px;
   left: 460px;
+}
+
+.artefact__car-point-2:hover::before {
+  content: "Яркий цвет";
+  display: block;
+  width: 180px;
+  top: -190px;
+  left: 220px;
+}
+
+.artefact__car-point-2:hover::after {
+  display: block;
+  top: -150px;
+  left: 30px;
 }
 
 .artefact__car-point-3 {
@@ -694,33 +740,12 @@ img {
   }
 }
 
-.artefact__car-point-core {
-  width: 13px;
-  height: 13px;
-  border-radius: 50%;
-  background-color: #FFD600;
-}
-
-.artefact__car-point::after {
-  content: '';
-  position: absolute;
-  display: none;
-  width: 325px;
-  height: 210px;
-  background-image: url("../images/show-line-comp.png");
-  background-repeat: no-repeat;
-}
-
-.artefact__car-point-1:hover::after {
+.artefact__car-point-3:hover::before {
+  content: "Откидная крыша";
   display: block;
-  top: -150px;
-  left: 30px;
-}
-
-.artefact__car-point-2:hover::after {
-  display: block;
-  top: -150px;
-  left: 30px;
+  width: 180px;
+  top: -190px;
+  left: 190px;
 }
 
 .artefact__car-point-3:hover::after {
@@ -729,46 +754,19 @@ img {
   left: 30px;
 }
 
-.artefact__car-point::before {
-  position: absolute;
-  display: none;
-  color: #505050;
-  font-family: Lato;
-  font-weight: 700;
-  font-size: 1.125rem;
-  line-height: 2.4rem;
-}
-
-.artefact__car-point-1:hover::before {
-  content: 'Ретро дизайн';
-  display: block;
-  width: 180px;
-  top: -190px;
-  left: 220px;
-}
-
-.artefact__car-point-2:hover::before {
-  content: 'Яркий цвет';
-  display: block;
-  width: 180px;
-  top: -190px;
-  left: 220px;
-}
-
-.artefact__car-point-3:hover::before {
-  content: 'Откидная крыша';
-  display: block;
-  width: 180px;
-  top: -190px;
-  left: 190px;
+.artefact__car-point-core {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: #ffd600;
 }
 
 .artefact__text {
-  margin-top: 70px;
-  color: #505050;
   font-family: Lato;
   font-weight: 400;
   font-size: 1rem;
+  margin-top: 70px;
+  color: #505050;
   line-height: 1.75rem;
 }
 
@@ -813,12 +811,12 @@ img {
 }
 
 .photo__heading {
-  text-align: center;
   font-family: Georgia;
   font-weight: 400;
   font-size: 2rem;
+  text-align: center;
   line-height: 2.4rem;
-  color: #4E5665;
+  color: #4e5665;
 }
 
 @media screen and (max-width: 768px) {
@@ -828,11 +826,11 @@ img {
 }
 
 .photo__text {
-  margin-top: 42px;
-  margin-bottom: 48px;
   font-family: Lato;
   font-weight: 400;
   font-size: 1rem;
+  margin-top: 42px;
+  margin-bottom: 48px;
   line-height: 1.75rem;
   color: #505050;
 }
@@ -841,8 +839,8 @@ img {
   width: 270px;
   height: 1px;
   margin: 0 auto 56px;
-  background-color: #D0D4D8;
-  opacity: .5;
+  background-color: #d0d4d8;
+  opacity: 0.5;
 }
 
 .photo__carousel {
@@ -967,7 +965,7 @@ img {
   font-weight: 700;
   font-size: 1rem;
   line-height: 1.25rem;
-  color: #4E5665;
+  color: #4e5665;
 }
 
 .footer__list {
@@ -1016,11 +1014,11 @@ img {
 }
 
 .footer__copyright {
-  text-align: center;
-  margin-top: 40px;
   font-family: Lato;
   font-weight: 400;
   font-size: 0.875rem;
+  text-align: center;
+  margin-top: 40px;
   line-height: 1.2rem;
   color: #505050;
 }
