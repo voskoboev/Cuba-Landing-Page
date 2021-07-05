@@ -8,12 +8,11 @@ html {
 *,
 *::before,
 *::after {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
   font-family: Lato;
   font-weight: 400;
   font-size: 1rem;
-  font-style: normal;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
 
 a {
@@ -122,8 +121,8 @@ img {
 }
 
 .header__slogan::before, .header__slogan::after {
-  content: "";
   width: 100%;
+  content: "";
   border-top: 1px solid #ecb84c;
 }
 
@@ -157,14 +156,14 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
 }
 
 @media screen and (max-width: 716px) {
@@ -256,11 +255,11 @@ img {
 }
 
 .benefit__readmore {
-  display: block;
-  text-align: end;
   font-family: Lato;
   font-weight: 700;
   font-size: 1rem;
+  display: block;
+  text-align: end;
   line-height: 1.75rem;
   color: #ecb84c;
 }
@@ -309,22 +308,22 @@ img {
 }
 
 .benefit__counter {
-  display: block;
-  text-align: center;
-  margin-top: 32px;
   font-family: Lato;
   font-weight: 700;
   font-size: 1.375rem;
+  display: block;
+  text-align: center;
+  margin-top: 32px;
   line-height: 2rem;
   color: #4e5665;
 }
 
 .benefit__feature-heading {
-  display: block;
-  text-align: center;
   font-family: Lato;
   font-weight: 700;
   font-size: 0.875rem;
+  display: block;
+  text-align: center;
   line-height: 1.1rem;
   color: #909090;
 }
@@ -389,53 +388,53 @@ img {
 
 @media screen and (max-width: 990px) {
   .about__upper, .about__lower {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     margin-top: 32px;
   }
 }
 
 .about__upper-info::before {
-  content: "";
   position: absolute;
   top: 19px;
   left: 19px;
   width: 33px;
   height: 33px;
+  content: "";
   background-image: url("../images/left-upper-angle-comp.png");
 }
 
 .about__upper-info::after {
-  content: "";
   position: absolute;
   right: 19px;
   bottom: 19px;
   width: 33px;
   height: 33px;
+  content: "";
   background-image: url("../images/right-lower-angle-comp.png");
 }
 
 .about__lower-info::before {
-  content: "";
   position: absolute;
   left: 19px;
   bottom: 19px;
   width: 33px;
   height: 33px;
+  content: "";
   background-image: url("../images/left-lower-angle-comp.png");
 }
 
 .about__lower-info::after {
-  content: "";
   position: absolute;
   right: 19px;
   top: 19px;
   width: 33px;
   height: 33px;
+  content: "";
   background-image: url("../images/right-upper-angle-comp.png");
 }
 
@@ -591,11 +590,11 @@ img {
 }
 
 .artefact__heading {
-  text-align: center;
-  margin-bottom: 110px;
   font-family: Georgia;
   font-weight: 400;
   font-size: 2rem;
+  text-align: center;
+  margin-bottom: 110px;
   line-height: 2.4rem;
   color: #4e5665;
 }
@@ -619,8 +618,7 @@ img {
   height: 330px;
   -webkit-box-shadow: 0px 20px 13px -20px rgba(0, 0, 0, 0.5);
           box-shadow: 0px 20px 13px -20px rgba(0, 0, 0, 0.5);
-  background-image: url("../images/car-comp.png");
-  background-repeat: no-repeat;
+  background: url("../images/car-comp.png") no-repeat;
   background-size: cover;
 }
 
@@ -677,18 +675,17 @@ img {
   font-size: 1.125rem;
   position: absolute;
   display: none;
-  color: #505050;
   line-height: 2.4rem;
+  color: #505050;
 }
 
 .artefact__car-point::after {
-  content: "";
   position: absolute;
   display: none;
   width: 325px;
   height: 210px;
-  background-image: url("../images/show-line-comp.png");
-  background-repeat: no-repeat;
+  content: "";
+  background: url("../images/show-line-comp.png") no-repeat;
 }
 
 .artefact__car-point-1 {
@@ -697,17 +694,17 @@ img {
 }
 
 .artefact__car-point-1:hover::before {
-  content: "Ретро дизайн";
-  display: block;
-  width: 180px;
   top: -190px;
   left: 220px;
+  display: block;
+  width: 180px;
+  content: "Ретро дизайн";
 }
 
 .artefact__car-point-1:hover::after {
-  display: block;
   top: -150px;
   left: 30px;
+  display: block;
 }
 
 .artefact__car-point-2 {
@@ -716,11 +713,11 @@ img {
 }
 
 .artefact__car-point-2:hover::before {
-  content: "Яркий цвет";
-  display: block;
-  width: 180px;
   top: -190px;
   left: 220px;
+  display: block;
+  width: 180px;
+  content: "Яркий цвет";
 }
 
 .artefact__car-point-2:hover::after {
@@ -741,24 +738,24 @@ img {
 }
 
 .artefact__car-point-3:hover::before {
-  content: "Откидная крыша";
-  display: block;
-  width: 180px;
   top: -190px;
   left: 190px;
+  display: block;
+  width: 180px;
+  content: "Откидная крыша";
 }
 
 .artefact__car-point-3:hover::after {
-  display: block;
   top: -150px;
   left: 30px;
+  display: block;
 }
 
 .artefact__car-point-core {
   width: 13px;
   height: 13px;
-  border-radius: 50%;
   background-color: #ffd600;
+  border-radius: 50%;
 }
 
 .artefact__text {
@@ -766,8 +763,8 @@ img {
   font-weight: 400;
   font-size: 1rem;
   margin-top: 70px;
-  color: #505050;
   line-height: 1.75rem;
+  color: #505050;
 }
 
 @media screen and (max-width: 1170px) {
@@ -934,14 +931,14 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   -webkit-box-align: baseline;
       -ms-flex-align: baseline;
           align-items: baseline;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   max-width: 900px;
   margin: 0 auto;
 }
@@ -964,6 +961,7 @@ img {
   font-family: Lato;
   font-weight: 700;
   font-size: 1rem;
+  text-transform: uppercase;
   line-height: 1.25rem;
   color: #4e5665;
 }

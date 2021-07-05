@@ -6,9 +6,9 @@ html {
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
   @include font($primary-font, $primary-weight);
-  font-style: normal;
+  
+  box-sizing: inherit;
 }
 
 a {

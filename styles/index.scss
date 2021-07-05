@@ -71,8 +71,8 @@
 
   &__slogan::before,
   &__slogan::after {
-    content: "";
     width: 100%;
+    content: "";
     border-top: 1px solid $primary-color;
   }
 
@@ -98,9 +98,9 @@
 
   &__menu {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
   }
 
   @media screen and (max-width: 716px) {
@@ -177,9 +177,10 @@
   }
 
   &__readmore {
+    @include font($primary-font, $secondary-weight);
+
     display: block;
     text-align: end;
-    @include font($primary-font, $secondary-weight);
     line-height: 1.75rem;
     color: $primary-color;
 
@@ -220,18 +221,20 @@
   }
 
   &__counter {
+    @include font($primary-font, $secondary-weight, 1.375rem);
+
     display: block;
     text-align: center;
     margin-top: 32px;
-    @include font($primary-font, $secondary-weight, 1.375rem);
     line-height: 2rem;
     color: #4e5665;
   }
 
   &__feature-heading {
+    @include font($primary-font, $secondary-weight, 0.875rem);
+
     display: block;
     text-align: center;
-    @include font($primary-font, $secondary-weight, 0.875rem);
     line-height: 1.1rem;
     color: #909090;
   }
@@ -284,49 +287,49 @@
   @media screen and (max-width: 990px) {
     &__upper,
     &__lower {
-      flex-wrap: wrap;
       flex-direction: column;
+      flex-wrap: wrap;
       margin-top: 32px;
     }
   }
 
   &__upper-info::before {
-    content: "";
     position: absolute;
     top: 19px;
     left: 19px;
     width: 33px;
     height: 33px;
+    content: "";
     background-image: url("../images/left-upper-angle-comp.png");
   }
 
   &__upper-info::after {
-    content: "";
     position: absolute;
     right: 19px;
     bottom: 19px;
     width: 33px;
     height: 33px;
+    content: "";
     background-image: url("../images/right-lower-angle-comp.png");
   }
 
   &__lower-info::before {
-    content: "";
     position: absolute;
     left: 19px;
     bottom: 19px;
     width: 33px;
     height: 33px;
+    content: "";
     background-image: url("../images/left-lower-angle-comp.png");
   }
 
   &__lower-info::after {
-    content: "";
     position: absolute;
     right: 19px;
     top: 19px;
     width: 33px;
     height: 33px;
+    content: "";
     background-image: url("../images/right-upper-angle-comp.png");
   }
 
@@ -446,9 +449,10 @@
   }
 
   &__heading {
+    @include font($secondary-font, $primary-weight, 2rem);
+
     text-align: center;
     margin-bottom: 110px;
-    @include font($secondary-font, $primary-weight, 2rem);
     line-height: 2.4rem;
     color: #4e5665;
 
@@ -467,8 +471,7 @@
     max-width: 1170px;
     height: 330px;
     box-shadow: 0px 20px 13px -20px rgba(0, 0, 0, 0.5);
-    background-image: url("../images/car-comp.png");
-    background-repeat: no-repeat;
+    background: url("../images/car-comp.png") no-repeat;
     background-size: cover;
 
     @media screen and (max-width: 768px) {
@@ -508,18 +511,17 @@
 
       position: absolute;
       display: none;
-      color: #505050;
       line-height: 2.4rem;
+      color: #505050;
     }
 
     &::after {
-      content: "";
       position: absolute;
       display: none;
       width: 325px;
       height: 210px;
-      background-image: url("../images/show-line-comp.png");
-      background-repeat: no-repeat;
+      content: "";
+      background: url("../images/show-line-comp.png") no-repeat;
     }
   }
 
@@ -528,17 +530,17 @@
     left: 0;
 
     &:hover::before {
-      content: "Ретро дизайн";
-      display: block;
-      width: 180px;
       top: -190px;
       left: 220px;
+      display: block;
+      width: 180px;
+      content: "Ретро дизайн";
     }
 
     &:hover::after {
-      display: block;
       top: -150px;
       left: 30px;
+      display: block;
     }
   }
 
@@ -547,11 +549,11 @@
     left: 460px;
 
     &:hover::before {
-      content: "Яркий цвет";
-      display: block;
-      width: 180px;
       top: -190px;
       left: 220px;
+      display: block;
+      width: 180px;
+      content: "Яркий цвет";
     }
 
     &:hover::after {
@@ -570,33 +572,33 @@
     }
 
     &:hover::before {
-      content: "Откидная крыша";
-      display: block;
-      width: 180px;
       top: -190px;
       left: 190px;
+      display: block;
+      width: 180px;
+      content: "Откидная крыша";
     }
 
     &:hover::after {
-      display: block;
       top: -150px;
       left: 30px;
+      display: block;
     }
   }
 
   &__car-point-core {
     width: 13px;
     height: 13px;
-    border-radius: 50%;
     background-color: #ffd600;
+    border-radius: 50%;
   }
 
   &__text {
     @include font($primary-font, $primary-weight);
 
     margin-top: 70px;
-    color: #505050;
     line-height: 1.75rem;
+    color: #505050;
 
     @media screen and (max-width: 1170px) {
       padding-left: 50px;
@@ -751,9 +753,9 @@
 
   &__container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: baseline;
-    flex-wrap: wrap;
     max-width: 900px;
     margin: 0 auto;
 
@@ -773,6 +775,7 @@
   &__heading {
     @include font($primary-font, $secondary-weight);
 
+    text-transform: uppercase;
     line-height: 1.25rem;
     color: #4e5665;
   }
