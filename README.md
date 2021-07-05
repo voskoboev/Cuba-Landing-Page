@@ -18,6 +18,5 @@
 -   **SCSS**:
     -   BEM naming methodology;
     -   Final CSS file compiled with prefixes.
-    - 
 ### Sources:
 [Template in PNG](https://yadi.sk/i/dnOAvx5fj1IA0Q)
