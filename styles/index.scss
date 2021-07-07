@@ -788,29 +788,11 @@
     margin-bottom: 20px;
   }
 
-  &__list-item--message::before {
-    content: url("../images/message-comp.png");
-    vertical-align: middle;
-  }
-
-  &__list-item--fb::before {
-    content: url("../images/fb-comp.png");
-    vertical-align: middle;
-  }
-
-  &__list-item--inst::before {
-    content: url("../images/inst-comp.png");
-    vertical-align: middle;
-  }
-
-  &__list-item--youtube::before {
-    content: url("../images/youtube-comp.png");
-    vertical-align: middle;
-  }
-
-  &__list-item--email::before {
-    content: url("../images/email-comp.png");
-    vertical-align: middle;
+  @each $elem in message, fb, inst, youtube, email {
+    &__list-item--#{$elem}::before {
+      content: url("../images/#{$elem}-comp.png");
+      vertical-align: middle;
+    }
   }
 
   &__list-link {
