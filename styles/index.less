@@ -1,3 +1,5 @@
+// compress: true, sourceMap: true
+
 @import "./_vars";
 @import "./_mixins";
 @import "./_global";
@@ -20,7 +22,7 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    border: 1px solid $primary-color;
+    border: 1px solid @primary-color;
     border-bottom: none;
 
     @media screen and (max-width: 520px) {
@@ -29,7 +31,7 @@
   }
 
   &__main-heading {
-    @include font($secondary-font, $secondary-weight, 12.5rem);
+    .font(@secondary-font, @secondary-weight, 12.5rem);
 
     margin: auto;
     line-height: 14rem;
@@ -46,7 +48,7 @@
   }
 
   &__slogan {
-    @include font($secondary-font, $primary-weight, 1.5rem);
+    .font(@secondary-font, @primary-weight, 1.5rem);
 
     display: flex;
     align-items: center;
@@ -73,7 +75,7 @@
   &__slogan::after {
     width: 100%;
     content: "";
-    border-top: 1px solid $primary-color;
+    border-top: 1px solid @primary-color;
   }
 
   &__slogan::before {
@@ -88,7 +90,7 @@
     display: flex;
     justify-content: center;
     padding: 24px 20px 18px;
-    border-bottom: 1px solid $secondary-color;
+    border-bottom: 1px solid @secondary-color;
     text-align: center;
 
     @media screen and (max-width: 716px) {
@@ -110,7 +112,7 @@
   }
 
   &__menu-link {
-    @include font($primary-font, $secondary-weight, 14px);
+    .font(@primary-font, @secondary-weight, 14px);
 
     padding: 24px 20px 16px;
     border-bottom: 4px solid transparent;
@@ -123,7 +125,7 @@
   }
 
   &__menu-link:hover {
-    border-bottom: 4px solid $primary-color;
+    border-bottom: 4px solid @primary-color;
     color: #4e5665;
   }
 }
@@ -139,7 +141,7 @@
     max-width: 1170px;
     padding-right: 100px;
     padding-left: 100px;
-    border-bottom: 1px solid $secondary-color;
+    border-bottom: 1px solid @secondary-color;
 
     @media screen and (max-width: 1170px) {
       padding-right: 50px;
@@ -153,7 +155,7 @@
   }
 
   &__heading {
-    @include font(inherit, $primary-weight, 2rem);
+    .font(inherit, @primary-weight, 2rem);
 
     text-align: center;
     line-height: 2.4rem;
@@ -165,7 +167,7 @@
   }
 
   &__text {
-    @include font($primary-font, $primary-weight);
+    .font(@primary-font, @primary-weight);
 
     margin-top: 22px;
     line-height: 1.75rem;
@@ -177,12 +179,12 @@
   }
 
   &__readmore {
-    @include font($primary-font, $secondary-weight);
+    .font(@primary-font, @secondary-weight);
 
     display: block;
     text-align: end;
     line-height: 1.75rem;
-    color: $primary-color;
+    color: @primary-color;
 
     &::after {
       content: "››";
@@ -221,7 +223,7 @@
   }
 
   &__counter {
-    @include font($primary-font, $secondary-weight, 1.375rem);
+    .font(@primary-font, @secondary-weight, 1.375rem);
 
     display: block;
     text-align: center;
@@ -231,7 +233,7 @@
   }
 
   &__feature-heading {
-    @include font($primary-font, $secondary-weight, 0.875rem);
+    .font(@primary-font, @secondary-weight, 0.875rem);
 
     display: block;
     text-align: center;
@@ -260,7 +262,7 @@
   }
 
   &__heading {
-    @include font(inherit, $primary-weight, 2rem);
+    .font(inherit, @primary-weight, 2rem);
 
     text-align: center;
     line-height: 38px;
@@ -273,7 +275,7 @@
 
   &__text {
     margin-top: 13px;
-    @include font($primary-font, $primary-weight);
+    .font(@primary-font, @primary-weight);
     line-height: 1.75rem;
     color: #505050;
   }
@@ -344,14 +346,14 @@
   }
 
   &__info-heading {
-    @include font($secondary-font, $primary-weight, 1.5rem);
+    .font(@secondary-font, @primary-weight, 1.5rem);
 
     line-height: 1.5rem;
     color: #4e5665;
   }
 
   &__info-text {
-    @include font($primary-font, $primary-weight);
+    .font(@primary-font, @primary-weight);
 
     line-height: 1.75rem;
     color: #505050;
@@ -449,7 +451,7 @@
   }
 
   &__heading {
-    @include font($secondary-font, $primary-weight, 2rem);
+    .font(@secondary-font, @primary-weight, 2rem);
 
     text-align: center;
     margin-bottom: 110px;
@@ -507,7 +509,7 @@
     }
 
     &::before {
-      @include font($primary-font, $secondary-weight, 1.125rem);
+      .font(@primary-font, @secondary-weight, 1.125rem);
 
       position: absolute;
       display: none;
@@ -594,7 +596,7 @@
   }
 
   &__text {
-    @include font($primary-font, $primary-weight);
+    .font(@primary-font, @primary-weight);
 
     margin-top: 70px;
     line-height: 1.75rem;
@@ -636,7 +638,7 @@
   }
 
   &__heading {
-    @include font($secondary-font, $primary-weight, 2rem);
+    .font(@secondary-font, @primary-weight, 2rem);
 
     text-align: center;
     line-height: 2.4rem;
@@ -648,20 +650,27 @@
   }
 
   &__text {
-    @include font($primary-font, $primary-weight);
+    .font(@primary-font, @primary-weight);
 
+    position: relative;
+    padding-bottom: 50px;
     margin-top: 42px;
-    margin-bottom: 48px;
+    margin-bottom: 55px;
     line-height: 1.75rem;
     color: #505050;
-  }
 
-  &__decor-line {
-    width: 270px;
-    height: 1px;
-    margin: 0 auto 56px;
-    background-color: #d0d4d8;
-    opacity: 0.5;
+    &::after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 270px;
+      height: 1px;
+      content: "";
+      margin: 0 auto;
+      background-color: #d0d4d8;
+      opacity: 0.5;
+    }
   }
 
   &__carousel {
@@ -723,7 +732,7 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: $primary-color;
+    background-color: @primary-color;
     background-size: 16px 16px;
     background-repeat: no-repeat;
     background-position: center;
@@ -736,13 +745,13 @@
   .swiper-button-prev {
     top: 240px;
     left: -20px;
-    background-image: url(../images/left-arrow-comp.png);
+    background-image: url("../images/left-arrow-comp.png");
   }
 
   .swiper-button-next {
     top: 240px;
     right: -20px;
-    background-image: url(../images/right-arrow-comp.png);
+    background-image: url("../images/right-arrow-comp.png");
   }
 }
 
@@ -773,7 +782,7 @@
   }
 
   &__heading {
-    @include font($primary-font, $secondary-weight);
+    .font(@primary-font, @secondary-weight);
 
     text-transform: uppercase;
     line-height: 1.25rem;
@@ -786,20 +795,43 @@
 
   &__list-item {
     margin-bottom: 20px;
+    cursor: pointer;
   }
 
-  @each $elem in message, fb, inst, youtube, email {
-    &__list-item--#{$elem}::before {
-      content: url("../images/#{$elem}-comp.png");
-      vertical-align: middle;
-    }
+  &__list-item--message::before {
+    content: url("../images/message-comp.png");
+    vertical-align: middle;
+  }
+
+  &__list-item--fb::before {
+    content: url("../images/fb-comp.png");
+    vertical-align: middle;
+  }
+
+  &__list-item--inst::before {
+    content: url("../images/inst-comp.png");
+    vertical-align: middle;
+  }
+
+  &__list-item--youtube::before {
+    content: url("../images/youtube-comp.png");
+    vertical-align: middle;
+  }
+
+  &__list-item--email::before {
+    content: url("../images/email-comp.png");
+    vertical-align: middle;
   }
 
   &__list-link {
-    @include font($primary-font, $primary-weight, 0.875rem);
+    .font(@primary-font, @primary-weight, 0.875rem);
 
     line-height: 1.2rem;
     color: #505050;
+
+    &:hover {
+      color: darken(#505050, 30%);
+    }
   }
 
   &__contacts-list-link {
@@ -807,7 +839,7 @@
   }
 
   &__copyright {
-    @include font($primary-font, $primary-weight, 0.875rem);
+    .font(@primary-font, @primary-weight, 0.875rem);
 
     text-align: center;
     margin-top: 40px;
